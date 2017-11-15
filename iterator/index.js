@@ -1,10 +1,10 @@
-var agg = (function() {
-  var index = 0,
+let agg = (function() {
+  let index = 0,
     data = [1, 2, 3, 4, 5],
     length = data.length;
   return {
-    next: function() {
-      var element;
+    next() {
+      let element;
       if (!this.hasNext()) {
         return null;
       }
@@ -12,13 +12,13 @@ var agg = (function() {
       index = index + 2;
       return element;
     },
-    hasNext: function() {
+    hasNext() {
       return index < length;
     },
-    rewind: function() {
+    rewind() {
       index = 0;
     },
-    current: function() {
+    current() {
       return data[index];
     }
   };
